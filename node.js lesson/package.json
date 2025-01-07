@@ -1,0 +1,22 @@
+{
+  "name": "node.js-lesson",
+  "version": "1.0.0",
+  "description": "node.js starter lesson",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node.js file collect"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "hojiakbar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
