@@ -1,10 +1,48 @@
-.admin-panel{
+.admin-panel {
     display: flex;
-    
-}
-.product-booking{
-    width: 50%;
-}
-.users-complaint{
-    width: 50%;
-}
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-image: url(/public/adminpanel.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+  }
+  
+  .product-booking, .users-complaint {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .MuiTable-root {
+    width: 100%;
+    background: white;
+  }
+  
+  .MuiTableHead-root {
+    background-color:grey;
+  }
+  
+  .MuiTableCell-head {
+    color: white !important;
+    font-weight: bold;
+  }
+  
+  .MuiTableCell-body {
+    font-size: 16px;
+  }
+  
+  .MuiTableRow-root:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  .MuiTableRow-root:hover {
+    background: #e9ecef;
+    transition: 0.3s;
+  }
+  

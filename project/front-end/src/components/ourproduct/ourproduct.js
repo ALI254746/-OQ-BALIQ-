@@ -5,6 +5,19 @@ import { useState, useEffect, useReducer, useContext } from "react";
 import { DataContext } from "../../data";
 
 function reducer(state, action) {
+
+  
+
+
+
+
+
+
+
+
+
+
+
   switch (action.type) {
     case "increment":
       return { count: state.count + 1 };
@@ -23,7 +36,14 @@ function OurProduct() {
   const [sovus, setSovus] = useState(false);
   const [sovusbaliqsoni, setSovusbaliqsoni] = useState(0);
 
+
+
+  //rasim kechikmasligi uchun
+  
+ 
+
   const [formData, setFormData] = useState({
+    baliq:"",
     nechta: 1,
     KG: "",
     Narx: 0,
@@ -31,31 +51,49 @@ function OurProduct() {
     nsovusli: 0,
   });
 
-  const updatePrice = (kg, count) => {
+  const updatePrice = (baliq,kg, count) => {
     const prices = {
-      "1 KG": 35000,
-      "1.5 KG": 45000,
-      "2 KG": 70000,
-      "3 KG": 105000,
+      "Oq-baliq": { "1 KG": 35000, "1.5 KG": 45000, "2 KG": 70000, "3 KG": 105000 },
+      "Ilon-Baliq": { "1 KG": 40000, "1.5 KG": 55000, "2 KG": 80000, "3 KG": 120000 },
+      "Sazan-Baliq": { "1 KG": 38000, "1.5 KG": 50000, "2 KG": 75000, "3 KG": 110000 },
+      "Laqa-Baliq": { "1 KG": 42000, "1.5 KG": 60000, "2 KG": 90000, "3 KG": 130000 },
     };
-    return (prices[kg] || 0) * count;
+    return (prices[baliq]?.[kg]|| 0) * count;
   };
 
   const changeHandler = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-      Narx: updatePrice(value, state.count),
-    }));
+    setFormData((prev) => {
+      const updatedData={...prev,[name]:value};
+     updatedData.Narx=updatePrice(updatedData.baliq,updatedData.KG,state.count);
+     return updatedData;
+      
+    });
   };
 
+//rasim kechikishini oldini olish uchun uni oldindan yuklab oldim
+  useEffect(() => {
+    if (formData.baliq) {
+      const img = new Image();
+      img.src = getFishImage(formData.baliq);
+    }
+  }, [formData.baliq]);
+  
+  const getFishImage = (fishType) => {
+    const images = {
+      "Oq-baliq": "/oqbaliq5.webp",
+      "Ilon-Baliq": "/ilonbaliq.webp",
+      "Sazan-Baliq": "/sazanbaliq.webp",
+      "Laqa-Baliq": "/laqabaliq.webp",
+    };
+    return images[fishType] || "/oqbaliq.webp"; // Default rasm
+  };
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
-      Narx: updatePrice(prev.KG, state.count),
+      Narx: updatePrice(prev.baliq,prev.KG, state.count),
     }));
-  }, [state.count, formData.KG]);
+  }, [state.count, formData.KG,formData.baliq]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,13 +121,27 @@ function OurProduct() {
   return (
     <div className="product">
       <div className="product-image">
-        <img src="/oqbaliq.webp" alt="Logo" />
-      </div>
+        <img src="/oqbaliq.webp" alt="logo"/>
+      {formData.baliq==="Oq-baliq"&&(<img src="/oqbaliq5.webp" alt="Logo" />)}
+      {formData.baliq==="Ilon-Baliq"&&(<img src="/ilonbaliq.webp" alt="Logo" />)}
+      {formData.baliq==="Sazan-Baliq"&&(<img src="/sazanbaliq.webp" alt="logo"/>)}
+      {formData.baliq==="Laqa-Baliq"&&(<img src="/laqabaliq.webp" alt="logo"/>)}
+      
+        </div>
+     
+      
       <div className="product-background">
         <div className="product-detail">
           <form onSubmit={handleSubmit}>
-            <h1>Oq baliq</h1>
+            <select name="baliq" value={formData.baliq} onChange={changeHandler}>
+              <option value="type">Baliq Turini Tanlang</option>
+              <option value="Oq-baliq">Oq Baliq</option>
+              <option value="Ilon-Baliq">Ilon Baliq</option>
+              <option value="Sazan-Baliq">Sazan baliq</option>
+              <option value="Laqa-Baliq">Laqa-baliq</option>
+            </select>
             <p className="pad1">Oq baliq yog‘da qovurilgan sifatli baliq va mazali ta’m beruvchi go‘sht</p>
+            
             <h3>Baliq kilosini tanlang</h3>
             <select name="KG" value={formData.KG} onChange={changeHandler}>
               <option value="">Baliq tanlang</option>
