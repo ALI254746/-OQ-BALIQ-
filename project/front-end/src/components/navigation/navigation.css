@@ -1,0 +1,47 @@
+.navigation{
+ display: flex;
+ background-image: url("/public/oqbaliq.webp");
+ background-repeat: no-repeat;
+ background-size: cover;
+ border-radius: 15px;
+ justify-content: space-between;
+ height: 110px;
+ align-items: center;
+ max-width: 1740px;
+ min-width: 500px;
+ margin-top: 15px;
+ margin: 0,auto;
+ 
+}
+.nav-logo img{
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+    border-radius: 50%;
+    
+}
+.nav-list ul{
+  display: flex;
+  list-style: none;
+  width: 480px;
+  height: 52px;
+  gap: 48px;
+  margin-right: 40px;
+
+}
+.nav-list li{
+    font-weight: 500;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+
+}
+.list-link{
+  text-decoration: none;
+  color:black;
+  text-shadow: 8px 10px 10px rgba(0,0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+.list-link :hover{
+  color: aqua;
+}

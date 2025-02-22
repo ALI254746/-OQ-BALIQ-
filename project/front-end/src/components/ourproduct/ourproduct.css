@@ -1,0 +1,77 @@
+.product{
+    display: flex;
+    margin-top: 100px;
+
+}
+.product-image{
+    width: 50%;
+}
+.product-image img{
+    width:625px;
+    height:613px;
+    border-radius: 10px;
+    position: absolute;
+    top:174px;  /*y o'qi */
+    left:110px; /*x  o'qi */
+
+}
+
+.count button{
+    display: inline;
+    width:30px;
+    height: 40px;
+   
+}
+.product-background{
+    background-image: url("/public/kulrang.webp");
+}
+.product-detail{
+    width:515px;
+    height: 336px;
+    position: absolute;
+    top:169px;
+    left:845px;
+   
+    
+}
+.product-detail h1{
+    line-height: 120%;
+    width: 515px;
+    height: 48px;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.pad1{
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+}
+.pad2{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.product-detail h3{
+    font-family:fantasy;
+    
+}
+.product-detail label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content:space-between;
+}
+input[type="radio"]{
+    accent-color: red;
+    width: 20px;
+    height: 20px;
+}
+.btn button{
+    width: 515px;
+    height: 52px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 8px;
+}

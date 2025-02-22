@@ -1,0 +1,138 @@
+ .contact-section{
+    display:flexbox;
+    margin-top: 25px;
+    margin-left: 600px;
+    background-image: url("/public/kulrang.webp");
+    border-radius: 15px;
+    box-shadow:  20px 25px 25px rgba(0,0, 0, 0.4);;
+    
+    
+}
+.contact-image{
+    width: 50%;
+}
+.contact-form form{
+   
+    width: 50%;
+    
+}
+.contact-image{
+    width: 50%;
+    
+    
+}
+.contact-information img{
+    position: relative;
+    top: -20px;
+    left: -35px;
+    width: 550px;
+    height: 748px;
+    border-radius: 15px;
+    box-shadow:  20px 25px 25px rgba(0,0, 0, 0.4);;
+    
+}
+.contact-information{
+    position: absolute;
+    top:170px;
+    left:150px;
+}
+
+
+.contact-information h1{
+   position:absolute;
+    top:30px;
+    width: 291px;
+    height: 42px;
+    font-size:28px ;
+    font-weight: bold;
+    text-shadow: 8px 10px 10px rgba(0,0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+.contact-information h1:hover{
+    color: cadetblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.contact-information p{
+    position: absolute;
+    top:80px;
+    
+    width: 307px;
+    height: 27px;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+   
+
+Form umumiy sozlamalari
+ form {
+    width: 100%;
+    max-width: 600px;
+    
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Input maydonlari */
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+} 
+
+/* Input hover va focus effekti */
+input:focus, textarea:focus {
+    border-bottom: 2px solid #000;
+} 
+
+/* Yorliqlar (label) */
+label {
+    font-size: 14px;
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+} 
+
+/* Radial tugmalar (radio buttons) */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+} 
+
+.radio-group input[type="radio"] {
+    accent-color: black;
+    transform: scale(1.2);
+} 
+
+/* Xabar yozish maydoni */
+textarea {
+    resize: none;
+    height: 100px;
+} 
+
+/* Tugma (button) */
+button {
+    background-color: #001F2B;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px 0;
+    transition: 0.3s;
+} 
+
+ button:hover {
+    background-color: #003A4F;
+}  
+
+
+
